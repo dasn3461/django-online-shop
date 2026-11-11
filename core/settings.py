@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,15 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dasn3461@gmail.com'
 EMAIL_HOST_PASSWORD = 'xksr ystn ixaf puzp'
 EMAIL_USE_TLS = True
+
+
+
+
+
+
+# SSLCommerz Configuration (Sandbox / Test Mode)
+SSLCOMMERZ = {
+    'store_id': 'core6aea2b376b07e',
+    'store_pass': 'V3KFmSh9W49q',
+    'issandbox': True,
+}

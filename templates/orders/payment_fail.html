@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card text-center p-4 shadow-sm">
+
+                <div class="card-body">
+
+                    <!-- Error Icon -->
+                    <span class="text-danger" style="font-size: 60px;">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+
+                    <!-- Error Message -->
+                    <h3 class="card-title mt-3 text-danger">
+                        Payment Failed!
+                    </h3>
+
+                    <p class="card-text text-muted">
+                        Unfortunately, your payment could not be processed.
+                        Please try again.
+                    </p>
+
+                    <!-- Show SSLCommerz Error -->
+                    {% if error %}
+                    <div class="alert alert-danger mt-3">
+                        <strong>Payment Error:</strong>
+                        {{ error }}
+                    </div>
+                    {% endif %}
+
+                    <hr>
+
+                    <p class="text-muted small">
+                        If money has been deducted from your account,
+                        please contact support before trying again.
+                    </p>
+
+                    <!-- Try Again Button -->
+                    <a href="{% url 'checkout' %}"
+                       class="btn btn-warning btn-block mt-3">
+
+                        <i class="fas fa-redo"></i>
+                        Try Again
+
+                    </a>
+
+                    <!-- Continue Shopping -->
+                    <a href="{% url 'store' %}"
+                       class="btn btn-light btn-block">
+
+                        Continue Shopping
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</section>
+
+{% endblock %}
